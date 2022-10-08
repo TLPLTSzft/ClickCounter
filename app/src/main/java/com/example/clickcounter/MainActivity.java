@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import static android.graphics.Color.RED;
 import static android.graphics.Color.rgb;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,23 +48,31 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
-    textViewCounter.setOnClickListener(new View.OnClickListener() {
+    textViewCounter.setOnLongClickListener(new View.OnLongClickListener() {
       @Override
-      public void onClick(View view) {
+      public boolean onLongClick(View view) {
         szam = 0;
         init();
+        return false;
       }
     });
-
   }
 
   public void init() {
-    if (szam > 0) {
-      textViewCounter.setTextColor(rgb(0,255,0));
-    } else if (szam < 0) {
+    int primOszto = 0;
+    for (int i = 3; i < szam; i++) {
+      if (szam % i == 0) {
+        primOszto++;
+      }
+    }
+    if (szam < 0) {
       textViewCounter.setTextColor(RED);
-    } else {
+    } else if (szam == 0) {
       textViewCounter.setTextColor(0xff0000ff);
+    } else if (szam == 1 || szam == 4 || primOszto != 0) {
+      textViewCounter.setTextColor(rgb(0, 255, 0));
+    } else if (szam <= 3 || primOszto == 0) {
+      textViewCounter.setTextColor(rgb(255, 255, 255));
     }
     textViewCounter.setText(String.valueOf(szam));
   }
