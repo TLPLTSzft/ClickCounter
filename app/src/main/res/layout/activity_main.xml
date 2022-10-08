@@ -20,6 +20,7 @@
     android:layout_height="wrap_content"
     android:layout_below="@id/buttonPlus"
     android:textAlignment="center"
+    android:text="0"
     android:textSize="30sp" />
 
   <Button
