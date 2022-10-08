@@ -5,6 +5,8 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:gravity="center"
+  android:id="@+id/relativeLayout"
+  android:background="@color/black"
   tools:context=".MainActivity">
 
   <Button
@@ -12,7 +14,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
-    android:text="+" />
+    android:text='+' />
 
   <TextView
     android:id="@+id/textViewCounter"
@@ -20,7 +22,6 @@
     android:layout_height="wrap_content"
     android:layout_below="@id/buttonPlus"
     android:textAlignment="center"
-    android:text="0"
     android:textSize="30sp" />
 
   <Button
@@ -29,6 +30,6 @@
     android:layout_height="wrap_content"
     android:layout_below="@id/textViewCounter"
     android:layout_centerHorizontal="true"
-    android:text="-"/>
+    android:text='-'/>
 
 </RelativeLayout>
